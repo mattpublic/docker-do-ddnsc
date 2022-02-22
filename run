@@ -1,0 +1,8 @@
+#!/bin/bash
+docker run --name=ddnsc -d --init \
+  -e DOKEY="PUT_API_KEY_HERE" \
+  -e DOMAIN="PUT_DOMAIN_HERE" \
+  -e HOST="PUT_HOSTNAME_HERE" \
+  -e CHECK=300 \
+  --restart unless-stopped \
+  mattpublic/do-ddnsc $@
